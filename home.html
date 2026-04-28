@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef De Home</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* HEADER */
+        header {
+            color: white;
+            display: flex;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.846);
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        /* LOGO */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .logo span {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 5px 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* DROPDOWN */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 10px;
+            color: white;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #555;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* HERO VIDEO */
+        .image {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+        }
+video::-webkit-media-controls-picture-in-picture-button {
+    display: none !important;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+        .image video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            top: 0;
+            left: 0;
+        }
+
+        /* RECIPES */
+        .recipes h1 {
+            padding: 20px;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .recipe-section {
+            width: 90%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        .recipe-card {
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .recipe-card h2 {
+            font-size: 22px;
+            padding: 10px;
+        }
+
+        .recipe-card p {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .recipe-card a {
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            background: #333;
+            padding: 10px;
+            color: #fff;
+            margin-top: auto;
+            cursor: pointer;
+        }
+
+        /* HIDDEN DETAILS */
+        .recipe-details {
+            display: none;
+            padding: 10px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 20px 0;
+            background: #333;
+            text-align: center;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .dropdown-menu {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+
+            <div class="logo">
+                <img src="https://i.pinimg.com/1200x/40/d3/99/40d399d1c443074bcd7059b60cb24532.jpg">
+                <span>Chef De Home</span>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="recipes.html">Recipes ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recipes.html">Veg</a></li>
+                            <li><a href="recipes.html">Non Veg</a></li>
+                            <li><a href="recipes.html">Dessert</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- HERO VIDEO -->
+    <section class="image">
+        <video autoplay muted loop playsinline disablePictureInPicture id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+</video>
+    </section>
+
+    <!-- RECIPES -->
+    <section class="recipes">
+        <h1>POPULAR PICKS</h1>
+
+        <div class="recipe-section">
+
+            <!-- Chicken -->
+            <div class="recipe-card">
+                <img src="https://myannoyingopinions.com/wp-content/uploads/2015/02/served1.jpg">
+                <h2>Chicken Curry</h2>
+                <p>Click to view full recipe</p>
+
+                <div class="recipe-details">
+                    Cook onions in oil until golden, add ginger garlic paste, then chicken and cook till lightly browned.
+                    Add tomatoes and spices, cook until soft. Mix in yogurt, add water, cover and simmer for 20–25 minutes.
+                    Finish with garam masala and fresh coriander. Serve hot with rice or roti.
+                </div>
+
+                <a onclick="toggleRecipe(this)">View Recipe</a>
+            </div>
+
+            <!-- Biryani -->
+            <div class="recipe-card">
+                <img src="https://static.toiimg.com/photo/60324819.cms">
+                <h2>Biryani</h2>
+                <p>Click to view full recipe</p>
+
+                <div class="recipe-details">
+                    Cook rice separately. Prepare spicy chicken masala. Layer rice and chicken, add saffron and steam (dum) for 15–20 minutes.
+                </div>
+
+                <a onclick="toggleRecipe(this)">View Recipe</a>
+            </div>
+
+            <!-- Lasagna -->
+            <div class="recipe-card">
+                <img src="https://images.ctfassets.net/7t85a6f8wt2m/2FEUb6yaLaUn3vv5v52MKO/4e98104d20f52f4746bba4f56470506b/Best_Lasagna_Ever_2.jpg">
+                <h2>Lasagna</h2>
+                <p>Click to view full recipe</p>
+
+                <div class="recipe-details">
+                    Layer pasta sheets with meat sauce and cheese. Repeat layers and bake in oven at 180°C for 30–40 minutes.
+                </div>
+
+                <a onclick="toggleRecipe(this)">View Recipe</a>
+            </div>
+
+            <!-- Pizza -->
+            <div class="recipe-card">
+                <img src="https://i.ytimg.com/vi/mbeve6aqXmU/hq720.jpg">
+                <h2>Pizza</h2>
+                <p>Click to view full recipe</p>
+
+                <div class="recipe-details">
+                    Spread sauce on pizza base, add cheese and toppings. Bake at 200°C for 15 minutes until golden.
+                </div>
+
+                <a onclick="toggleRecipe(this)">View Recipe</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Chef De Home | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function toggleRecipe(btn) {
+            let details = btn.parentElement.querySelector(".recipe-details");
+
+            if (details.style.display === "block") {
+                details.style.display = "none";
+                btn.innerText = "View Recipe";
+            } else {
+                details.style.display = "block";
+                btn.innerText = "Hide Recipe";
+            }
+        }
+    </script>
+
+</body>
+</html>

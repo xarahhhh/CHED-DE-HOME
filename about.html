@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Chef De Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+        }
+
+        /* HEADER */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        /* LOGO */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
+
+        .logo span {
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        /* NAVBAR */
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 6px 10px;
+            transition: 0.3s;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .nav-list li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* DROPDOWN */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 10px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #555;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            width: 90%;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .about h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .about h2 {
+            margin-top: 30px;
+            font-size: 28px;
+            color: #222;
+        }
+
+        .about ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .about ul li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .about h1 {
+                font-size: 32px;
+            }
+
+            .nav-list {
+                justify-content: center;
+            }
+
+            .dropdown-menu {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container">
+
+            <!-- LOGO -->
+            <div class="logo">
+                <img src="https://i.pinimg.com/1200x/40/d3/99/40d399d1c443074bcd7059b60cb24532.jpg" alt="logo">
+                <span>Chef De Home</span>
+            </div>
+
+            <!-- NAV LINKS -->
+            <ul class="nav-list">
+                <li><a href="home.html">Home</a></li>
+
+                <li class="dropdown">
+                    <a href="recipes.html">Recipes ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="recipes.html">Veg</a></li>
+                        <li><a href="recipes.html">Non Veg</a></li>
+                        <li><a href="recipes.html">Dessert</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+    <!-- ABOUT CONTENT -->
+    <section class="about">
+
+        <h1>About Us</h1>
+
+        <p>
+            Welcome to <b>Chef De Home</b>, your go-to destination for delicious and easy recipes.
+            We aim to make cooking simple, fun, and accessible for everyone.
+        </p>
+
+        <h2>What We Offer</h2>
+        <ul>
+            <li>🍲 Vegetarian & Non-Vegetarian Recipes</li>
+            <li>🍰 Delicious Desserts</li>
+            <li>🍕 Quick & Easy Meals</li>
+            <li>🌍 International Cuisine</li>
+        </ul>
+
+        <h2>Our Mission</h2>
+        <p>
+            To inspire people to cook at home and explore new flavors with confidence and creativity.
+        </p>
+
+        <h2>Why Choose Us?</h2>
+        <p>
+            Simple instructions, easy recipes, and beginner-friendly cooking guides for everyone.
+        </p>
+
+    </section>
+
+    <br>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Chef De Home | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

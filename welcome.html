@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef De Home</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .welcome-container {
+            display: flex;
+            background-image: url(https://cdn.vectorstock.com/i/500p/91/15/cooking-ingredients-recipe-book-and-kitchen-vector-53759115.jpg);
+            background-position: center;
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* responsive wrapper */
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* limits size on large screens */
+        }
+
+        .welcome-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        /* button on image */
+        .welcome-button {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff5733;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .welcome-button:hover {
+            background-color: #e74c3c;
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        /* 📱 MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .welcome-button {
+                font-size: 14px;
+                padding: 10px 15px;
+                bottom: 10px;
+            }
+
+            .image-wrapper {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-button {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="welcome-container">
+
+        <div class="image-wrapper">
+            <img src="https://img.freepik.com/premium-vector/cook-with-love-calligraphy-vector-lettering-text-food-blog-restaurant-cafe-poster-kitchen_81863-3949.jpg"
+                alt="Cook with Love" class="welcome-image">
+
+            <a href="home.html" class="welcome-button">
+                WELCOME TO CHEF DE HOME
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

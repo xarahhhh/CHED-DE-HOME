@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Chef De Home</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+/* HEADER */
+header {
+    background-color: #333;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.logo span {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* NAV */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 6px 10px;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    color: white;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+.title h1 {
+    font-size: 50px;
+    color: #333;
+}
+
+/* GALLERY */
+.gallery {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    padding-bottom: 40px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 380px;
+    border-radius: 10px;
+    white-space: pre-line;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+footer {
+    padding: 20px 0;
+    background: #333;
+    text-align: center;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .title h1 {
+        font-size: 32px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dropdown-menu {
+        position: static;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<div class="logo">
+<img src="https://i.pinimg.com/1200x/40/d3/99/40d399d1c443074bcd7059b60cb24532.jpg">
+<span>Chef De Home</span>
+</div>
+
+<ul class="nav-links">
+<li><a href="home.html">Home</a></li>
+
+<li class="dropdown">
+    <a href="recipes.html">Recipes ▾</a>
+    <ul class="dropdown-menu">
+        <li><a href="recipes.html">Veg</a></li>
+        <li><a href="recipes.html">Non Veg</a></li>
+        <li><a href="recipes.html">Dessert</a></li>
+    </ul>
+</li>
+
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</header>
+
+<section class="title">
+<h1>Food Gallery</h1>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery">
+<img onclick="openModal('Biryani')" src="https://static.toiimg.com/photo/60324819.cms">
+<img onclick="openModal('Lava Cake')" src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Lava-Chocolate-Cakes_EXPS_TOHFM25_43967_P2_MD_01_03_3b.jpg">
+<img onclick="openModal('Vegetarian Pasta')" src="https://img.taste.com.au/82dj1YVh/w643-h428-cfill-q90/taste/2016/11/vegetarian-pasta-bake-86305-1.jpeg">
+<img onclick="openModal('Chicken Chasseur')" src="https://img.taste.com.au/eMQ-PQVY/w643-h428-cfill-q90/taste/2016/11/chicken-chasseur-74413-1.jpeg">
+<img onclick="openModal('Donuts')" src="https://cdn.britannica.com/38/230838-050-D0173E79/doughnuts-donuts.jpg">
+<img onclick="openModal('Lasagna')" src="https://images.ctfassets.net/7t85a6f8wt2m/2FEUb6yaLaUn3vv5v52MKO/4e98104d20f52f4746bba4f56470506b/Best_Lasagna_Ever_2.jpg">
+<img onclick="openModal('Cake')" src="https://madaboutcakes.com.au/cdn/shop/files/MADABAOUTCAKESWEB2301-107.jpg">
+<img onclick="openModal('Pizza')" src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9">
+<img onclick="openModal('Burger')" src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+<img onclick="openModal('Fries')" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877">
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">×</span>
+<h2 id="title"></h2>
+<p id="text"></p>
+</div>
+</div>
+<br>
+<br>
+<footer>
+<p>&copy; 2024 Chef De Home | All Rights Reserved</p>
+</footer>
+
+<script>
+const data = {
+"Biryani": {
+recipe: "Rice, chicken, spices",
+steps: "1. Cook rice\n2. Prepare masala\n3. Layer & steam",
+reviews: "⭐ 5/5 - Amazing taste\n⭐ 4.8/5 - Very flavorful"
+},
+"Lava Cake": {
+recipe: "Chocolate, eggs, flour",
+steps: "1. Mix batter\n2. Bake slightly\n3. Serve hot",
+reviews: "⭐ 5/5 - Perfect molten center\n⭐ 4.7/5 - Delicious dessert"
+},
+"Vegetarian Pasta": {
+recipe: "Pasta, vegetables, cream",
+steps: "1. Boil pasta\n2. Mix veggies\n3. Add sauce",
+reviews: "⭐ 4.5/5 - Very creamy\n⭐ 4.2/5 - Healthy and tasty"
+},
+"Chicken Chasseur": {
+recipe: "Chicken, mushrooms",
+steps: "1. Cook chicken\n2. Add sauce\n3. Simmer",
+reviews: "⭐ 4.6/5 - Rich flavor"
+},
+"Donuts": {
+recipe: "Dough, sugar, oil",
+steps: "1. Fry dough\n2. Add sugar",
+reviews: "⭐ 5/5 - Soft and fluffy"
+},
+"Lasagna": {
+recipe: "Pasta, cheese, sauce",
+steps: "1. Layer sheets\n2. Add sauce\n3. Bake",
+reviews: "⭐ 4.9/5 - Cheesy perfection"
+},
+"Cake": {
+recipe: "Flour, sugar, cream",
+steps: "1. Bake sponge\n2. Add cream\n3. Decorate",
+reviews: "⭐ 5/5 - Moist and soft"
+},
+"Pizza": {
+recipe: "Dough, cheese, toppings",
+steps: "1. Prepare base\n2. Add toppings\n3. Bake",
+reviews: "⭐ 5/5 - Crispy and cheesy"
+},
+"Burger": {
+recipe: "Bun, patty, sauce",
+steps: "1. Grill patty\n2. Assemble burger",
+reviews: "⭐ 4.7/5 - Juicy and tasty"
+},
+"Fries": {
+recipe: "Potatoes, oil, salt",
+steps: "1. Cut potatoes\n2. Fry until crispy",
+reviews: "⭐ 4.8/5 - Crunchy and delicious"
+}
+};
+
+function openModal(name) {
+    document.getElementById("modal").style.display = "flex";
+    document.getElementById("title").innerText = name;
+
+    document.getElementById("text").innerText =
+        "🍽 Recipe:\n" + data[name].recipe +
+        "\n\n👨‍🍳 Steps:\n" + data[name].steps +
+        "\n\n⭐ Reviews:\n" + data[name].reviews;
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

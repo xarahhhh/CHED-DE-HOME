@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipes</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* HEADER */
+header {
+    background-color: rgba(0, 0, 0, 0.846);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* NAV */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+    padding: 6px 10px;
+    font-size: 20px;
+}
+
+.nav-list li a:hover {
+    background: #555;
+    border-radius: 5px;
+}
+
+
+/* TITLES */
+.recipes h1 {
+    text-align: center;
+    font-size: 60px;
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin: 40px 0 20px;
+}
+
+/* GRID */
+.recipe-section {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+/* CARD */
+.recipe-card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.recipe-card h2 {
+    font-size: 22px;
+    padding: 10px;
+}
+
+.recipe-card p {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.recipe-card button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 320px;
+    border-radius: 10px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<div class="logo">
+<img src="https://i.pinimg.com/1200x/40/d3/99/40d399d1c443074bcd7059b60cb24532.jpg">
+<span>Chef De Home</span>
+</div>
+
+<ul class="nav-list">
+<li><a href="home.html">Home</a></li>
+<li><a href="recipes.html">Recipes</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</header>
+
+<section class="recipes">
+<h1>CUISINE CATALOG</h1>
+
+<!-- VEG -->
+<h2 class="section-title">VEG RECIPES</h2>
+<div class="recipe-section">
+
+<div class="recipe-card">
+<img src="https://img.taste.com.au/82dj1YVh/w643-h428-cfill-q90/taste/2016/11/vegetarian-pasta-bake-86305-1.jpeg">
+<h2>Vegetarian Pasta</h2>
+<p>Creamy pasta.</p>
+<button onclick="openModal('Vegetarian Pasta','Boil pasta, mix vegetables, add creamy sauce.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://img.taste.com.au/LRINPNZI/w643-h428-cfill-q90/taste/2020/06/creamy-vegetarian-pumpkin-curry-163183-2.jpg">
+<h2>Pumpkin Curry</h2>
+<p>Rich curry.</p>
+<button onclick="openModal('Pumpkin Curry','Cook pumpkin with spices and coconut milk.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://img.taste.com.au/qOLmXgqJ/w643-h428-cfill-q90/taste/2020/01/hayden-quinns-creamy-summer-vegetarian-pasta-157951-2.jpg">
+<h2>Hayden Pasta</h2>
+<p>Delicious pasta.</p>
+<button onclick="openModal('Hayden Pasta','Cook pasta and mix creamy herbs sauce.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://img.taste.com.au/xX6tKpDQ/w643-h428-cfill-q90/taste/2019/08/one-pan-vegetarian-paella-153359-1.jpg">
+<h2>Veg Paella</h2>
+<p>Spanish rice.</p>
+<button onclick="openModal('Veg Paella','Cook rice with vegetables and spices.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://img.taste.com.au/M1MVGb_F/w643-h428-cfill-q90/taste/2019/04/ultimate-vegetarian-ramen-bowl-recipe-148512-2.jpg">
+<h2>Ramen</h2>
+<p>Noodles soup.</p>
+<button onclick="openModal('Ramen','Boil noodles with broth and vegetables.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://img.taste.com.au/Autg9Pdu/w643-h428-cfill-q90/taste/2018/08/vegetarian-kung-pao-cauliflower-140338-2.jpg">
+<h2>Kung Pao</h2>
+<p>Spicy dish.</p>
+<button onclick="openModal('Kung Pao','Stir fry vegetables with spicy sauce.')">View Recipe</button>
+</div>
+
+</div>
+
+<!-- NON VEG -->
+<h2 class="section-title">NON-VEG RECIPES</h2>
+<div class="recipe-section">
+
+<div class="recipe-card">
+<img src="https://www.marionskitchen.com/wp-content/uploads/2024/02/20240212_MK_Easiest-Butter-Chicken-From-Scratch-8.webp">
+<h2>Butter Chicken</h2>
+<p>Creamy chicken.</p>
+<button onclick="openModal('Butter Chicken','Cook chicken in tomato creamy gravy.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://img.taste.com.au/Uo7ng374/w643-h428-cfill-q90/taste/2020/04/slow-cooker-chicken-korma-161112-2.jpg">
+<h2>Chicken Korma</h2>
+<p>Traditional curry.</p>
+<button onclick="openModal('Chicken Korma','Cook chicken with yogurt and spices.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://img.taste.com.au/TUG83F_a/w643-h428-cfill-q90/taste/2020/03/slow-cooker-italian-chicken-160331-2.jpg">
+<h2>Italian Chicken</h2>
+<p>Italian style.</p>
+<button onclick="openModal('Italian Chicken','Cook chicken with Italian herbs.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://img.taste.com.au/FefCsTvV/w643-h428-cfill-q90/taste/2020/03/slow-cooker-chicken-diane-drumsticks-160302-1.jpg">
+<h2>Chicken Drumsticks</h2>
+<p>Juicy chicken.</p>
+<button onclick="openModal('Chicken Drumsticks','Bake or fry chicken drumsticks.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://img.taste.com.au/7FjZsbmF/w643-h428-cfill-q90/taste/2020/03/korean-chilli-chicken-wings-with-coconut-mash-159078-1.jpg">
+<h2>Chicken Wings</h2>
+<p>Spicy wings.</p>
+<button onclick="openModal('Chicken Wings','Fry wings with spicy sauce.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://img.taste.com.au/eMQ-PQVY/w643-h428-cfill-q90/taste/2016/11/chicken-chasseur-74413-1.jpeg">
+<h2>Chicken Chasseur</h2>
+<p>French dish.</p>
+<button onclick="openModal('Chicken Chasseur','Cook chicken in wine sauce.')">View Recipe</button>
+</div>
+
+</div>
+
+<!-- DESSERT -->
+<h2 class="section-title">DESSERTS</h2>
+<div class="recipe-section">
+
+<div class="recipe-card">
+<img src="https://cdn.britannica.com/38/230838-050-D0173E79/doughnuts-donuts.jpg">
+<h2>Donuts</h2>
+<p>Sweet donuts.</p>
+<button onclick="openModal('Donuts','Make dough, fry and coat with sugar.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Lava-Chocolate-Cakes_EXPS_TOHFM25_43967_P2_MD_01_03_3b.jpg">
+<h2>Lava Cake</h2>
+<p>Chocolate cake.</p>
+<button onclick="openModal('Lava Cake','Bake chocolate cake with molten center.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://www.allrecipes.com/thmb/lEoi4NlK3JIselK9T44pmNkUqFk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/21775-raspberry-trifle-DDMFS-4x3-1-92b83d58411543658f58b41668076c0d.jpg">
+<h2>Raspberry Trifle</h2>
+<p>Layer dessert.</p>
+<button onclick="openModal('Raspberry Trifle','Layer cream, cake and berries.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://images.arla.com/recordid/41C05D67-A066-4F80-89D32D684B33E279/kunafa-with-cream.jpg">
+<h2>Kunafa</h2>
+<p>Arabic sweet.</p>
+<button onclick="openModal('Kunafa','Bake kunafa with cheese and syrup.')">View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<img src="https://biancazapatka.com/wp-content/uploads/2020/07/vegan-tiramisu.jpg">
+<h2>Tiramisu</h2>
+<p>Coffee dessert.</p>
+<button onclick="openModal('Tiramisu','Layer biscuits, cream and coffee.')">View Recipe</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">×</span>
+<h2 id="title"></h2>
+<p id="text"></p>
+</div>
+</div>
+
+<footer>
+<p>&copy; 2024 Chef De Home | All Rights Reserved</p>
+</footer>
+
+<script>
+function openModal(title, text) {
+    document.getElementById("modal").style.display = "flex";
+    document.getElementById("title").innerText = title;
+    document.getElementById("text").innerText = text;
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+window.onclick = function(e) {
+    if (e.target == document.getElementById("modal")) {
+        closeModal();
+    }
+}
+</script>
+
+</body>
+</html>
